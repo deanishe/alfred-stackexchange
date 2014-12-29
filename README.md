@@ -3,6 +3,8 @@
 
 Search for answers on StackOverflow.com from Alfred 2.
 
+![](demo.gif "")
+
 ## Download ##
 
 Get StackOverflow for Alfred from [GitHub][gh-releases] or
@@ -37,3 +39,4 @@ It is heavily based on [Alfred-Workflow][alfred-workflow], also
 [alfred-workflow]: http://www.deanishe.net/alfred-workflow/
 [gh-releases]: https://github.com/deanishe/alfred-stackoverflow/releases
 [packal-page]: http://www.packal.org/workflow/stackoverflow-search
+[demo]: demo.gif
