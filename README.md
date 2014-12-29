@@ -1,7 +1,12 @@
 
-# StackOverflow Search for Alfred 2 #
+# StackOverflow Search for Alfred #
 
-Search for answers on StackOverflow.com from Alfred.
+Search for answers on StackOverflow.com from Alfred 2.
+
+## Download ##
+
+Get StackOverflow for Alfred from [GitHub][gh-releases] or
+[Packal][packal-page].
 
 ## Usage ##
 
@@ -20,3 +25,14 @@ the post title, `.python` will search for the tag `python`.
 
 Answered questions will be shown first in the list of results (and have a
 tick on their icon).
+
+## Licensing, thanks ##
+
+This workflow is released under the [MIT Licence][mit].
+
+It is heavily based on [Alfred-Workflow], also [MIT-licensed][mit].
+
+[mit]: http://opensource.org/licenses/MIT
+[alfred-workflow]: http://www.deanishe.net/alfred-workflow/
+[gh-releases]: https://github.com/deanishe/alfred-stackoverflow/releases
+[packal-page]: http://www.packal.org/workflow/stackoverflow
