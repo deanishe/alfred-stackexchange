@@ -26,6 +26,7 @@ USER_AGENT = 'Alfred-StackOverflow/{version} ({url})'
 UPDATE_SETTINGS = {'github_slug': 'deanishe/alfred-stackoverflow'}
 
 ICON_ANSWERED = 'answered.png'
+ICON_UPDATE = 'update-available.png'
 
 # Shown in error logs. Users can find help here
 HELP_URL = 'https://github.com/deanishe/alfred-stackoverflow'
@@ -109,6 +110,14 @@ def get_answers(query=None, tags=None, limit=RESULT_COUNT):
 
 
 def main(wf):
+
+    # Update available?
+    if wf.update_available:
+        wf.add_item('A newer version is available',
+                    '↩ to install update',
+                    autocomplete='workflow:update',
+                    icon=ICON_UPDATE)
+
     query = wf.args[0].strip()
 
     # Tag prefix only. Treat as blank query
@@ -174,7 +183,6 @@ def main(wf):
 
 if __name__ == '__main__':
     wf = Workflow(help_url=HELP_URL,
-                  # update_settings=UPDATE_SETTINGS,
-                  )
+                  update_settings=UPDATE_SETTINGS)
     log = wf.logger
     sys.exit(wf.run(main))
