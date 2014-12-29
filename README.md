@@ -39,4 +39,4 @@ It is heavily based on [Alfred-Workflow][alfred-workflow], also
 [alfred-workflow]: http://www.deanishe.net/alfred-workflow/
 [gh-releases]: https://github.com/deanishe/alfred-stackoverflow/releases
 [packal-page]: http://www.packal.org/workflow/stackoverflow-search
-[demo]: demo.gif
+[demo]: https://raw.githubusercontent.com/deanishe/alfred-stackoverflow/master/demo.gif
