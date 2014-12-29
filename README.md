@@ -30,9 +30,10 @@ tick on their icon).
 
 This workflow is released under the [MIT Licence][mit].
 
-It is heavily based on [Alfred-Workflow], also [MIT-licensed][mit].
+It is heavily based on [Alfred-Workflow][alfred-workflow], also
+[MIT-licensed][mit].
 
 [mit]: http://opensource.org/licenses/MIT
 [alfred-workflow]: http://www.deanishe.net/alfred-workflow/
 [gh-releases]: https://github.com/deanishe/alfred-stackoverflow/releases
-[packal-page]: http://www.packal.org/workflow/stackoverflow
+[packal-page]: http://www.packal.org/workflow/stackoverflow-search
