@@ -51,9 +51,9 @@ log = None
 
 def cache_key(query, tags):
     """Make filesystem-friendly cache key"""
-    key = query + ';'.join(tags)
+    key = query + '_' + ';'.join(tags)
     key = key.lower()
-    key = re.sub(r'[^a-z0-9-_\.]', '-', key)
+    key = re.sub(r'[^a-z0-9-_;\.]', '-', key)
     key = re.sub(r'-+', '-', key)
     log.debug('Cache key : {!r} {!r} -> {!r}'.format(query, tags, key))
     return key
