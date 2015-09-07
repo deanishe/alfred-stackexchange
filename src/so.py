@@ -70,7 +70,7 @@ def handle_answer(api_dict):
     return result
 
 
-def get_answers(query=None, tags=None, limit=RESULT_COUNT):
+def get_answers(query=None, tags=None, site=None, limit=RESULT_COUNT ):
     """Return list of answers from API"""
     headers = {}
     headers['user-agent'] = USER_AGENT.format(version=wf.version,
@@ -80,7 +80,7 @@ def get_answers(query=None, tags=None, limit=RESULT_COUNT):
         'pagesize': limit,
         'order': 'desc',
         'sort': 'relevance',
-        'site': SITE
+        'site': site
     }
     if query:
         params['intitle'] = query
@@ -136,11 +136,15 @@ def main(wf):
 
     query = []
     tags = []
+    site = SITE
 
     for word in words:
         if word.startswith('.'):
             if word != '.':  # Ignore empty tags
                 tags.append(word[1:])
+        elif word.startswith('$'):
+            if word != '$':
+                site = word[1:]
         else:
             query.append(word)
 
@@ -150,7 +154,7 @@ def main(wf):
 
     # Fetch answers from API
 
-    answers = wf.cached_data(key, functools.partial(get_answers, query, tags),
+    answers = wf.cached_data(key, functools.partial(get_answers, query, tags, site),
                              max_age=CACHE_MAX_AGE)
 
     log.debug('{} answers for {!r}, tagged {!r}'.format(len(answers),
