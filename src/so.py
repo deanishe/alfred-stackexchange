@@ -144,7 +144,7 @@ def main(wf):
         else:
             query.append(word)
 
-    query = ''.join(query)
+    query = ' '.join(query)
 
     key = cache_key(query, tags)
 
