@@ -1,7 +1,7 @@
 
 # StackOverflow Search for Alfred #
 
-Search for answers on StackOverflow.com from Alfred 2.
+Search for answers on StackOverflow.com from [Alfred 2 & 3][alfred].
 
 ![](demo.gif "")
 
@@ -35,6 +35,8 @@ This workflow is released under the [MIT Licence][mit].
 It is heavily based on [Alfred-Workflow][alfred-workflow], also
 [MIT-licensed][mit].
 
+
+[alfred]: https://www.alfredapp.com/
 [mit]: http://opensource.org/licenses/MIT
 [alfred-workflow]: http://www.deanishe.net/alfred-workflow/
 [gh-releases]: https://github.com/deanishe/alfred-stackoverflow/releases
