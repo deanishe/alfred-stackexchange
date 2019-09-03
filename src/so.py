@@ -35,7 +35,7 @@ HELP_URL = 'https://github.com/deanishe/alfred-stackoverflow'
 SITE = 'stackoverflow'
 
 # API endpoint for all Stack Exchange sites
-API_URL = 'https://api.stackexchange.com/2.2/search'
+API_URL = 'https://api.stackexchange.com/2.2/search/advanced'
 
 # Number of results to fetch from API
 RESULT_COUNT = 50
@@ -83,7 +83,7 @@ def get_answers(query=None, tags=None, limit=RESULT_COUNT):
         'site': SITE
     }
     if query:
-        params['intitle'] = query
+        params['q'] = query
     if tags:
         params['tagged'] = ';'.join(tags)
 
