@@ -6,6 +6,98 @@
 	<string>net.deanishe.alfred-stackoverflow</string>
 	<key>connections</key>
 	<dict>
+		<key>09E8507C-FEF5-4584-BE56-D4EFE259D6AD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F06B92D5-06C7-4D06-9264-44CBC672D3B6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3F754589-2F2D-44DE-85D6-A1F60CE8B365</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7CB1FB83-BEB2-4F88-9D77-273835D81E22</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5AF67880-C672-4985-94D1-FD3266D73515</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F06B92D5-06C7-4D06-9264-44CBC672D3B6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>EBC08033-F36D-46FC-A88E-CBD0F6C16283</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C20D5A2-D1BD-455F-921D-355DC7ABD9EE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5ED4335E-5456-4B56-93F0-A53B7D020AC7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5AF67880-C672-4985-94D1-FD3266D73515</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7C20D5A2-D1BD-455F-921D-355DC7ABD9EE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA778324-0AF2-426F-BE77-E9DECA04F387</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C7066333-36BB-4B34-928A-BA1FD40C5FE2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5AF67880-C672-4985-94D1-FD3266D73515</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>DA778324-0AF2-426F-BE77-E9DECA04F387</key>
+		<array/>
 		<key>F06B92D5-06C7-4D06-9264-44CBC672D3B6</key>
 		<array>
 			<dict>
@@ -15,24 +107,77 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Dean Jackson</string>
 	<key>description</key>
-	<string>Search StackOverflow Questions</string>
+	<string>Search StackExchange sites</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>StackOverflow</string>
+	<string>StackExchange Search</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
+				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>.so</string>
+				<key>queuedelaycustom</key>
+				<integer>2</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading results from StackOverflow …</string>
+				<key>script</key>
+				<string>/usr/bin/python so.py search --site stackoverflow "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search StackOverflow for “{query}”</string>
+				<key>title</key>
+				<string>Search StackOverflow</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3F754589-2F2D-44DE-85D6-A1F60CE8B365</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
 				<key>url</key>
 				<string>{query}</string>
 				<key>utf8</key>
@@ -43,33 +188,47 @@
 			<key>uid</key>
 			<string>7CB1FB83-BEB2-4F88-9D77-273835D81E22</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
 				<integer>102</integer>
-				<key>keyword</key>
-				<string>.so</string>
 				<key>queuedelaycustom</key>
-				<integer>3</integer>
+				<integer>2</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<true/>
+				<false/>
 				<key>queuedelaymode</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Querying StackOverflow.com…</string>
+				<string>Loading results from {var:site_name} …</string>
 				<key>script</key>
-				<string>/usr/bin/python so.py "{query}"</string>
+				<string>echo "site_id=$site_id, site_name=$site_name" &gt;&amp;2
+
+/usr/bin/python so.py search --site $site_id "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search {var:site_name} for “{query}”</string>
 				<key>title</key>
-				<string>Search StackOverflow</string>
+				<string>Search {var:site_name}</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>5</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -78,25 +237,261 @@
 			<key>uid</key>
 			<string>F06B92D5-06C7-4D06-9264-44CBC672D3B6</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>stack</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading sites…</string>
+				<key>script</key>
+				<string>/usr/bin/python so.py sites "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Choose a StackExchange site to search</string>
+				<key>title</key>
+				<string>Search StackExchange Site…</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C7066333-36BB-4B34-928A-BA1FD40C5FE2</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>Search</string>
+						<key>uid</key>
+						<string>EBC08033-F36D-46FC-A88E-CBD0F6C16283</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>5AF67880-C672-4985-94D1-FD3266D73515</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/python so.py "$action"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DA778324-0AF2-426F-BE77-E9DECA04F387</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>5ED4335E-5456-4B56-93F0-A53B7D020AC7</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>09E8507C-FEF5-4584-BE56-D4EFE259D6AD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.hidealfred</string>
+			<key>uid</key>
+			<string>7C20D5A2-D1BD-455F-921D-355DC7ABD9EE</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>09E8507C-FEF5-4584-BE56-D4EFE259D6AD</key>
+		<dict>
+			<key>note</key>
+			<string>Search default site</string>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>395</integer>
+		</dict>
+		<key>3F754589-2F2D-44DE-85D6-A1F60CE8B365</key>
+		<dict>
+			<key>note</key>
+			<string>Search StackOverflow.com</string>
+			<key>xpos</key>
+			<integer>95</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>5AF67880-C672-4985-94D1-FD3266D73515</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>235</integer>
+		</dict>
+		<key>5ED4335E-5456-4B56-93F0-A53B7D020AC7</key>
+		<dict>
+			<key>note</key>
+			<string>Search for current selection in default StackExchange site.</string>
+			<key>xpos</key>
+			<integer>95</integer>
+			<key>ypos</key>
+			<integer>395</integer>
+		</dict>
+		<key>7C20D5A2-D1BD-455F-921D-355DC7ABD9EE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>575</integer>
+			<key>ypos</key>
+			<integer>425</integer>
+		</dict>
 		<key>7CB1FB83-BEB2-4F88-9D77-273835D81E22</key>
 		<dict>
+			<key>note</key>
+			<string>Open answer in browser</string>
+			<key>xpos</key>
+			<integer>880</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>205</integer>
+		</dict>
+		<key>C7066333-36BB-4B34-928A-BA1FD40C5FE2</key>
+		<dict>
+			<key>note</key>
+			<string>Choose a StackExchange site to search</string>
+			<key>xpos</key>
+			<integer>95</integer>
+			<key>ypos</key>
+			<integer>215</integer>
+		</dict>
+		<key>DA778324-0AF2-426F-BE77-E9DECA04F387</key>
+		<dict>
+			<key>note</key>
+			<string>Run alternate actions</string>
+			<key>xpos</key>
+			<integer>650</integer>
+			<key>ypos</key>
+			<integer>395</integer>
 		</dict>
 		<key>F06B92D5-06C7-4D06-9264-44CBC672D3B6</key>
 		<dict>
+			<key>note</key>
+			<string>Search chosen StackExchange site</string>
+			<key>xpos</key>
+			<integer>650</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>205</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>cache_max_age</key>
+		<string>300</string>
+		<key>ignore_meta_sites</key>
+		<string>1</string>
+		<key>result_count</key>
+		<string>50</string>
+		<key>site_id</key>
+		<string>stackoverflow</string>
+		<key>site_name</key>
+		<string>Stack Overflow</string>
+	</dict>
+	<key>version</key>
+	<string>2.0.0</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/deanishe/alfred-stackoverflow</string>
 </dict>
 </plist>
