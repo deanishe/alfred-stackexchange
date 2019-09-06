@@ -24,9 +24,6 @@ import sys
 from workflow import Workflow3, web, ICON_WARNING
 from workflow.background import run_in_background, is_running
 
-from common import CLIENT_ID, CLIENT_KEY
-from util import asciify
-
 USER_AGENT = 'Alfred-StackOverflow/{version} ({url})'
 
 UPDATE_SETTINGS = {'github_slug': 'deanishe/alfred-stackoverflow'}
