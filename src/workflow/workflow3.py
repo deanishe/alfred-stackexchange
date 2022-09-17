@@ -30,6 +30,7 @@ import os
 import sys
 
 from .workflow import ICON_WARNING, Workflow
+# from .workflow3 import Workflow3
 
 
 class Variables(dict):
@@ -106,7 +107,7 @@ class Variables(dict):
             str: UTF-8 encoded ``alfredworkflow`` JSON object
 
         """
-        return unicode(self).encode('utf-8')
+        return str(self).encode('utf-8')
 
 
 class Modifier(object):

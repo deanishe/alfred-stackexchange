@@ -11,11 +11,13 @@
 """Search StackOverflow API."""
 
 from __future__ import print_function, absolute_import
+from cgitb import html
 
 from collections import namedtuple
 import functools
 import hashlib
-from HTMLParser import HTMLParser
+from html import unescape
+from html.parser import HTMLParser
 from unicodedata import normalize
 import os
 import re
@@ -78,7 +80,7 @@ Options:
 
 
 # Used to unescape HTML entities
-h = HTMLParser()
+
 # Logger populated in if __name__ == '__main__' clause
 log = None
 
@@ -113,13 +115,13 @@ def unicodify(s, encoding='utf-8'):
         unicode: Decoded Unicode string.
 
     """
-    if isinstance(s, unicode):
+    if isinstance(s, str):
         return s
 
     if isinstance(s, str):
         return s.decode(encoding, 'replace')
 
-    return unicode(s)
+    return str(s)
 
 
 def asciify(s):
@@ -139,7 +141,7 @@ def asciify(s):
 
 def _hash(s):
     """Return hash of string."""
-    if isinstance(s, unicode):
+    if isinstance(s, str):
         s = s.encode('utf-8')
     h = hashlib.md5(s)
     return h.hexdigest()[:12]
@@ -205,9 +207,9 @@ def get_sites():
                 continue
 
             sites.append(Site(
-                h.unescape(d['api_site_parameter']),
-                h.unescape(d['name']),
-                h.unescape(d['audience']),
+                unescape(d['api_site_parameter']),
+                unescape(d['name']),
+                unescape(d['audience']),
                 d['icon_url'],
                 d['site_type'] == 'meta_site',
             ))
@@ -223,9 +225,9 @@ def get_sites():
 def handle_answer(api_dict):
     """Extract relevant info from API result."""
     return Answer(
-        h.unescape(api_dict['title']),
-        h.unescape(api_dict['link']),
-        tuple(h.unescape(api_dict['tags'])),
+        unescape(api_dict['title']),
+        unescape(api_dict['link']),
+        tuple(unescape(api_dict['tags'])),
         api_dict['is_answered'],
     )
 
@@ -454,7 +456,7 @@ def main(wf):
 
     if not wf.cached_data_fresh(SITES_KEY, 86400) and not is_running('sites'):
         log.debug(u'Updating list of sites…')
-        run_in_background('sites', ('/usr/bin/python', 'so.py', 'cache-sites'))
+        run_in_background('sites', ('/usr/bin/python3', 'so.py', 'cache-sites'))
 
     if args['search']:
         return do_search(args)

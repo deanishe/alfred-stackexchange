@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 #
 # Copyright (c) 2014 Fabio Niephaus <fabio.niephaus@gmail.com>,
@@ -30,9 +30,10 @@ import os
 import tempfile
 import re
 import subprocess
+from six import string_types
 
-import workflow
-import web
+from workflow import web
+from workflow import Workflow
 
 # __all__ = []
 
@@ -47,7 +48,7 @@ def wf():
     """Lazy `Workflow` object."""
     global _wf
     if _wf is None:
-        _wf = workflow.Workflow()
+        _wf = Workflow()
     return _wf
 
 
@@ -143,7 +144,7 @@ class Download(object):
                 pre-release. Defaults to False.
 
         """
-        if isinstance(version, basestring):
+        if isinstance(version, string_types):
             version = Version(version)
 
         self.url = url

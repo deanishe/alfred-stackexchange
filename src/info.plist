@@ -150,7 +150,7 @@
 				<key>runningsubtext</key>
 				<string>Loading results from StackOverflow …</string>
 				<key>script</key>
-				<string>/usr/bin/python so.py search --site stackoverflow "$1"</string>
+				<string>/usr/bin/python3 so.py search --site stackoverflow "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -176,12 +176,14 @@
 			<dict>
 				<key>browser</key>
 				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -217,8 +219,7 @@
 				<string>Loading results from {var:site_name} …</string>
 				<key>script</key>
 				<string>echo "site_id=$site_id, site_name=$site_name" &gt;&amp;2
-
-/usr/bin/python so.py search --site $site_id "$1"</string>
+/usr/bin/python3 so.py search --site $site_id "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -267,7 +268,7 @@
 				<key>runningsubtext</key>
 				<string>Loading sites…</string>
 				<key>script</key>
-				<string>/usr/bin/python so.py sites "$1"</string>
+				<string>/usr/bin/python3 so.py sites "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -277,7 +278,7 @@
 				<key>title</key>
 				<string>Search StackExchange Site…</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>5</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -310,6 +311,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -326,13 +329,13 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>/usr/bin/python so.py "$action"</string>
+				<string>/usr/bin/python3 so.py "$action"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>5</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -375,6 +378,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>search</string>
 			</dict>
@@ -403,79 +408,81 @@
 			<key>note</key>
 			<string>Search default site</string>
 			<key>xpos</key>
-			<integer>380</integer>
+			<real>380</real>
 			<key>ypos</key>
-			<integer>395</integer>
+			<real>395</real>
 		</dict>
 		<key>3F754589-2F2D-44DE-85D6-A1F60CE8B365</key>
 		<dict>
 			<key>note</key>
 			<string>Search StackOverflow.com</string>
 			<key>xpos</key>
-			<integer>95</integer>
+			<real>95</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>30</real>
 		</dict>
 		<key>5AF67880-C672-4985-94D1-FD3266D73515</key>
 		<dict>
 			<key>xpos</key>
-			<integer>380</integer>
+			<real>380</real>
 			<key>ypos</key>
-			<integer>235</integer>
+			<real>235</real>
 		</dict>
 		<key>5ED4335E-5456-4B56-93F0-A53B7D020AC7</key>
 		<dict>
 			<key>note</key>
 			<string>Search for current selection in default StackExchange site.</string>
 			<key>xpos</key>
-			<integer>95</integer>
+			<real>95</real>
 			<key>ypos</key>
-			<integer>395</integer>
+			<real>395</real>
 		</dict>
 		<key>7C20D5A2-D1BD-455F-921D-355DC7ABD9EE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>575</integer>
+			<real>575</real>
 			<key>ypos</key>
-			<integer>425</integer>
+			<real>425</real>
 		</dict>
 		<key>7CB1FB83-BEB2-4F88-9D77-273835D81E22</key>
 		<dict>
 			<key>note</key>
 			<string>Open answer in browser</string>
 			<key>xpos</key>
-			<integer>880</integer>
+			<real>880</real>
 			<key>ypos</key>
-			<integer>205</integer>
+			<real>205</real>
 		</dict>
 		<key>C7066333-36BB-4B34-928A-BA1FD40C5FE2</key>
 		<dict>
 			<key>note</key>
 			<string>Choose a StackExchange site to search</string>
 			<key>xpos</key>
-			<integer>95</integer>
+			<real>95</real>
 			<key>ypos</key>
-			<integer>215</integer>
+			<real>215</real>
 		</dict>
 		<key>DA778324-0AF2-426F-BE77-E9DECA04F387</key>
 		<dict>
 			<key>note</key>
 			<string>Run alternate actions</string>
 			<key>xpos</key>
-			<integer>650</integer>
+			<real>650</real>
 			<key>ypos</key>
-			<integer>395</integer>
+			<real>395</real>
 		</dict>
 		<key>F06B92D5-06C7-4D06-9264-44CBC672D3B6</key>
 		<dict>
 			<key>note</key>
 			<string>Search chosen StackExchange site</string>
 			<key>xpos</key>
-			<integer>650</integer>
+			<real>650</real>
 			<key>ypos</key>
-			<integer>205</integer>
+			<real>205</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>cache_max_age</key>
@@ -492,7 +499,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.0.1</string>
+	<string>2.0.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/deanishe/alfred-stackoverflow</string>
 </dict>

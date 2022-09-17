@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # encoding: utf-8
 #
 # Copyright (c) 2014 deanishe@deanishe.net
@@ -24,8 +24,14 @@ import sys
 import os
 import subprocess
 import pickle
+import inspect
+from tkinter import S
 
-from workflow import Workflow
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0, parentdir) 
+
+from workflow.workflow3 import Workflow3
 
 __all__ = ['is_running', 'run_in_background']
 
@@ -35,7 +41,7 @@ _wf = None
 def wf():
     global _wf
     if _wf is None:
-        _wf = Workflow()
+        _wf = Workflow3()
     return _wf
 
 
@@ -143,7 +149,7 @@ def _background(pidfile, stdin='/dev/null', stdout='/dev/null',
             if pid > 0:
                 if write:  # write PID of child process to `pidfile`
                     tmp = pidfile + '.tmp'
-                    with open(tmp, 'wb') as fp:
+                    with open(tmp, 'w') as fp:
                         fp.write(str(pid))
                     os.rename(tmp, pidfile)
                 if wait:  # wait for child process to exit
@@ -165,9 +171,9 @@ def _background(pidfile, stdin='/dev/null', stdout='/dev/null',
 
     # Now I am a daemon!
     # Redirect standard file descriptors.
-    si = open(stdin, 'r', 0)
-    so = open(stdout, 'a+', 0)
-    se = open(stderr, 'a+', 0)
+    si = open(stdin, 'rb', 0)
+    so = open(stdout, 'ab+', 0)
+    se = open(stderr, 'ab+', 0)
     if hasattr(sys.stdin, 'fileno'):
         os.dup2(si.fileno(), sys.stdin.fileno())
     if hasattr(sys.stdout, 'fileno'):
@@ -233,7 +239,7 @@ def run_in_background(name, args, **kwargs):
         _log().debug('[%s] command cached: %s', name, argcache)
 
     # Call this script
-    cmd = ['/usr/bin/python', __file__, name]
+    cmd = ['/usr/bin/python3', __file__, name]
     _log().debug('[%s] passing job to background runner: %r', name, cmd)
     retcode = subprocess.call(cmd)
 
